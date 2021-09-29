@@ -35,7 +35,7 @@ public class EnemyAI : MonoBehaviour
 
 void MoveEnemy(Vector2 direction)
     {
-        rb.MovePosition((Vector2)Transform.position + (direction *moveSpeed *Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (direction *moveSpeed *Time.deltaTime));
     }
         // Destroy enemy if the collider hitting the trigger has the tag projectile
     
