@@ -44,7 +44,7 @@ void MoveEnemy(Vector2 direction)
     if(other.CompareTag("Projectile"))
     {
         print("Projectile Hit Enemy");
-         Destroy(gameObject,0.5f);
+        Destroy(gameObject, 1.5f);
     }
     
     }
