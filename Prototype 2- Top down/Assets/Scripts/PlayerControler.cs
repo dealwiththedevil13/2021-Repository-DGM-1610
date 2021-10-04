@@ -9,8 +9,8 @@ public class PlayerControler : MonoBehaviour
     public float hInput; 
     public float vInput;
 
-    public float xRange = 8.72f;
-    public float yRange = 4.95f;
+    public float xRange = 11.76f;
+    public float yRange = 5.1f;
 
     public GameObject projectile;
     public Transform launcher;
@@ -48,7 +48,7 @@ public class PlayerControler : MonoBehaviour
      {
          transform.position = new Vector3(transform.position.x, -yRange, transform.position.z);
      }
-     
+
     if(Input.GetKeyDown(KeyCode.Space))
 {
     Instantiate(projectile, launcher.transform.position, launcher.transform.rotation);
