@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
 void FixedUpdate()
 {
-    if(Input.GetButtonDown)
+   // if(Input.GetButtonDown);
 }
     void Move()
     {
