@@ -15,13 +15,18 @@ public class PlayerController : MonoBehaviour
 
     private Camera camera;
     private Rigidbody rb;
+    private Weapon weapon;
 
+    void Awake()
+    {
+        weapon = GetComponent <Weapon>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         //Get components
         camera = Camera.main;
-        rb=GetComponent<Rigidbody>();
+        rb = GetComponent <Rigidbody>();
     }
 
     // Update is called once per frame
@@ -29,25 +34,29 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         CamLook();
-
-        if(Input.GetButtonDown("Jump"))
-            Jump();
+        // fire button
+        if(Input.GetButton("Fire1"))
+        {
+            if(weapon.CanShoot())
+            weapon.Shoot();
+        }
+          if (Input.GetButtonDown("Jump"))
+             Jump();
     }
 
-void FixedUpdate()
-{
-   // if(Input.GetButtonDown);
-}
+   
+
     void Move()
     {
         float x= Input.GetAxis("Horizontal") * moveSpeed;
          float z= Input.GetAxis("Vertical") * moveSpeed;
 
         // rb.velocity = new Vector3(x,rb.velocity.y, z);- Old code
-
+        // Move direction relative to camera
         Vector3 dir = transform.right * x + transform.forward * z;
+    
         rb.velocity = dir;
-
+        dir.y = rb.velocity.y;
 
     }
 
@@ -66,6 +75,9 @@ void FixedUpdate()
         Ray ray = new Ray(transform.position, Vector3.down);
 
         if(Physics.Raycast(ray,1.1f))
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);  //deleted , ForceMode.Impulse
+            {
+                // Add force to jump
+               rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
     }
 }
