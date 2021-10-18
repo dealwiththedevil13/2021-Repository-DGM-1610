@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         float y= Input.GetAxis("Mouse X") * lookSensitivity;
         rotX -= Input.GetAxis("Mouse Y") * lookSensitivity;
         
-        rotX = Mathf.Clamp(rotX, minLookX,maxLookX);
+        rotX = Mathf.Clamp(rotX, minLookX, maxLookX);
         camera.transform.localRotation = Quaternion.Euler(-rotX,0,0);
         transform.eulerAngles += Vector3.up *y;
     }
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, Vector3.down);
 
-        if(Physics.Raycast(ray,1.1f))
+        if(Physics.Raycast(ray, 1.1f))
             {
                 // Add force to jump
                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
