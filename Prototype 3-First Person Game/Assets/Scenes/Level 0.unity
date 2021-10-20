@@ -579,9 +579,9 @@ GameObject:
   - component: {fileID: 949369512}
   - component: {fileID: 949369511}
   - component: {fileID: 949369510}
+  - component: {fileID: 949369515}
   - component: {fileID: 949369509}
   - component: {fileID: 949369508}
-  - component: {fileID: 949369515}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -709,7 +709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949369507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.05, y: 1.42, z: 0}
+  m_LocalPosition: {x: 4.23, y: 1.56, z: 8.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 499847812}
@@ -728,6 +728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f1f1a09651619e4cb08155df16099bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curHp: 10
+  maxHp: 10
+  scoreToGive: 100
+  moveSpeed: 3
+  attackRange: 5
+  yPathOffset: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291510468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.42, z: 0}
+  m_LocalPosition: {x: 0, y: 1.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
