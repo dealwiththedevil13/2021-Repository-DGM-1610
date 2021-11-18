@@ -32,6 +32,12 @@ public class PlayerController : MonoBehaviour
         //Get components
         camera = Camera.main;
         rb = GetComponent <Rigidbody>();
+
+        //Initialize the UI
+        GameUI.instance.UpdateHealthBar(curHp, maxHp);
+        GameUI.instance.UpdateScoreText(0);
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo, weapon.maxAmmo);
+
     }
 
     // Applies Damage to the player
@@ -41,11 +47,13 @@ public class PlayerController : MonoBehaviour
 
     if(curHp <= 0)
         Die();
+
+    GameUI.instance.UpdateHealthBar(curHp, maxHp);
 }
 //If players health is reduced zero or below then run Die()
     void Die()
     {
-        
+        GameManager.instance.LoseGame();
     }
    
 
@@ -87,11 +95,14 @@ public class PlayerController : MonoBehaviour
     public void GiveHealth(int amountToGive)
     {
             curHp =Mathf.Clamp(curHp + amountToGive, 0, maxHp);
+            GameUI.instance.UpdateHealthBar(curHp, maxHp);
     }
 
     public void GiveAmmo(int amountToGive)
     {
         weapon.curAmmo=Mathf.Clamp(weapon.curAmmo + amountToGive, 0, weapon.maxAmmo);
+        GameUI.instance.UpdateAmmoText(weapon.curAmmo,weapon.maxAmmo);
+
     }
 
          void Update()
@@ -106,5 +117,9 @@ public class PlayerController : MonoBehaviour
         }
           if (Input.GetButtonDown("Jump"))
              Jump();
+            
+        //Don't do anything if the game is paused
+         if(GameManager.instance.gamePaused == true)
+            return;
     }
 }
