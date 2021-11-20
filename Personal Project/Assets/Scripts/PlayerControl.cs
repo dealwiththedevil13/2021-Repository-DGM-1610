@@ -27,13 +27,13 @@ public class PlayerControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Move()
     {
         // movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Horizontal") * moveSpeed;
+        float z = Input.GetAxis("Vertical") * moveSpeed;
 
-        Vector3.MovementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        Vector3.movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         transform.Translate( movementDirection* moveSpeed *Time.deltaTime);
 
     }
