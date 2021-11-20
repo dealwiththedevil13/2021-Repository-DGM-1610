@@ -17,8 +17,7 @@ public class PlayerControl : MonoBehaviour
     {
         curHp-= damage;
 
-        if(curHp <= 0)
-        Die();
+      
     }
     // Start is called before the first frame update
     void Start()
@@ -30,11 +29,13 @@ public class PlayerControl : MonoBehaviour
     void Move()
     {
         // movement
-        float x = Input.GetAxis("Horizontal") * moveSpeed;
-        float z = Input.GetAxis("Vertical") * moveSpeed;
+        float horizontalInput = Input.GetAxis("Horizontal") * moveSpeed;
+        float verticalInput = Input.GetAxis("Vertical") * moveSpeed;
 
-        Vector3.movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        transform.Translate( movementDirection* moveSpeed *Time.deltaTime);
+        Vector3 dir = new Vector3(horizontalInput, 0, verticalInput);
+        transform.Translate( dir * moveSpeed *Time.deltaTime);
+
+        rb.velocity = dir;
 
     }
 }
