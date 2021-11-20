@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float x= Input.GetAxis("Horizontal") * moveSpeed;
-         float z= Input.GetAxis("Vertical") * moveSpeed;
+        float z= Input.GetAxis("Vertical") * moveSpeed;
 
         // rb.velocity = new Vector3(x,rb.velocity.y, z);- Old code
         // Move direction relative to camera
