@@ -11,10 +11,14 @@ public class Enemy : MonoBehaviour
     public int moveSpeed, attackRange, ypathOffset;
 
     private List<Vector3> path;
+    private GameObject target;
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = FindObjectOfType<PlayerContol>().gameObject;
+        InvokeRepeating("UpdatePath",0.0f,0.5f);
+    
+        curHp=maxHp;
     }
 
     void updatePath()
@@ -23,6 +27,13 @@ public class Enemy : MonoBehaviour
         NavMesh.CalculatePath(transform.position, target.transform.position, NavMesh.AllAreas, navMeshPath);
 
         path = NavMeshPath.corners.ToList();
+    }
+    void ChaseTarget()
+    {
+        if(path.count == 0)
+        return;
+
+        tranform.position = Vector3.MoveTowards(tranform.position, path[0] + new Vector3(0,yPathOffset,0), moveSpeed * Time.deltaTime);
     }
     // Update is called once per frame
     void Update()
