@@ -34,6 +34,13 @@ public class Enemy : MonoBehaviour
         return;
 
         tranform.position = Vector3.MoveTowards(tranform.position, path[0] + new Vector3(0,yPathOffset,0), moveSpeed * Time.deltaTime);
+            path.RemoveAt(0);
+    }
+
+    void Die()
+    {
+        GameManager.instance.AddScore(scoreToGive);
+        Destroy(gameObject);
     }
     // Update is called once per frame
     void Update()
