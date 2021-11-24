@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turnspeed = ;
+        turnspeed =0.5f;
 
             print(speed);
             print(turnspeed);
@@ -20,6 +20,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.translate(Vector3.forward* speed * Time.deltaTime);
+        transform.Translate(Vector3.forward* speed * Time.deltaTime);
     }
 }
