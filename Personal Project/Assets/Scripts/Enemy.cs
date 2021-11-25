@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         if(path.count == 0)
         return;
 
-        tranform.position = Vector3.MoveTowards(tranform.position, path[0] + new Vector3(0,yPathOffset,0), moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, path[0] + new Vector3(0,yPathOffset,0), moveSpeed * Time.deltaTime);
             path.RemoveAt(0);
     }
 
