@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float turnSpeed;
+    public float rotationSpeed;
     private float horizontalInput;
     private float forwardInput;
 
@@ -21,9 +22,22 @@ public class PlayerController : MonoBehaviour
         //Turning based on Horizontal and Vertical Iput
         horizontalInput= Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
+        
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, forwardInput);
+        movementDirection.Normalize();
 
         //movement
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-        transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime * horizontalInput);
+        transform.Translate(movementDirection * speed* Time.deltaTime, Space.World);
+
+        if(movementDirection !=Vector3.zero)
+        {
+           // transform.forward = movementDirection;
+           Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+
+           transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+        }
+       // transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
+       // transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime * horizontalInput);
     }
 }
