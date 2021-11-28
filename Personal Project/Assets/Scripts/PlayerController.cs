@@ -7,8 +7,10 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float turnSpeed;
     public float rotationSpeed;
+    public float jumpForce;
     private float horizontalInput;
     private float forwardInput;
+     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour
         //Turning based on Horizontal and Vertical Iput
         horizontalInput= Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
-        
+
         Vector3 movementDirection = new Vector3(horizontalInput, 0, forwardInput);
         movementDirection.Normalize();
 
