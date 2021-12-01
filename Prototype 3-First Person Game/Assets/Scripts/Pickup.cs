@@ -49,6 +49,7 @@ public class Pickup : MonoBehaviour
                     }
                     //Refrence Audio Source to play sound effect
                     other.GetComponent<AudioSource>().PlayOneShot(pickupSFX);
+                    // Destroy Pickup
                     Destroy(gameObject);
                 }
         }
