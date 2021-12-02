@@ -29,12 +29,7 @@ public class GameUI : MonoBehaviour
         instance = this;
 
     }
-    //Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+   
     public void UpdateHealthBar(int curHP, int maxHP)
     {
         healthBarFill.fillAmount = (float)curHP/ (float)maxHP;
@@ -77,12 +72,5 @@ public class GameUI : MonoBehaviour
     public void OnMenuButton()
     {
         SceneManager.LoadScene("Menu");
-    }
-
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

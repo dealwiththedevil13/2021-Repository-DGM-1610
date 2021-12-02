@@ -35,6 +35,7 @@ public class Pickup : MonoBehaviour
                 if(other.CompareTag("Player"))
                 {
                     PlayerController player = other.GetComponent<PlayerController>();
+                    //Allows several responses
                     switch(type)
                     {
                         case PickupType.Health:
