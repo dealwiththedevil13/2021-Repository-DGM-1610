@@ -17,6 +17,14 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+    //Destroy player on contact with enemy
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag =="Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Update is called once per frame
     void Update()
