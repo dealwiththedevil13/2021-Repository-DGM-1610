@@ -8,13 +8,14 @@ using System.Linq;
 public class Enemy : MonoBehaviour
 {
     //stats for the enemies
-    public int curHp, maxHp, scoreToGive;
+    public int curHp, maxHp;
     // Movement and the offset
     public float moveSpeed, attackRange, yPathOffset;
     //Path Coordinates
     private List<Vector3> path;
     //Target to follow
     private GameObject target;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()

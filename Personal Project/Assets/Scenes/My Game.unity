@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 639909475}
   - component: {fileID: 639909478}
   - component: {fileID: 639909474}
+  - component: {fileID: 639909479}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -1046,6 +1047,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &639909479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639909473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6090c7b23431a14e933f930304b1b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHp: 10
+  maxHp: 10
+  moveSpeed: 50
+  attackRange: 0
+  yPathOffset: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,6 +1266,7 @@ GameObject:
   - component: {fileID: 812378242}
   - component: {fileID: 812378245}
   - component: {fileID: 812378241}
+  - component: {fileID: 812378246}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -1348,6 +1367,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &812378246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812378240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6090c7b23431a14e933f930304b1b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHp: 10
+  maxHp: 10
+  moveSpeed: 20
+  attackRange: 0
+  yPathOffset: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,6 +1524,7 @@ GameObject:
   - component: {fileID: 1122851719}
   - component: {fileID: 1122851722}
   - component: {fileID: 1122851718}
+  - component: {fileID: 1122851723}
   m_Layer: 0
   m_Name: Enemy 3
   m_TagString: Enemy
@@ -1590,6 +1627,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1122851723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122851717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6090c7b23431a14e933f930304b1b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHp: 10
+  maxHp: 10
+  moveSpeed: 20
+  attackRange: 0
+  yPathOffset: 1
 --- !u!1 &1163930734
 GameObject:
   m_ObjectHideFlags: 0
