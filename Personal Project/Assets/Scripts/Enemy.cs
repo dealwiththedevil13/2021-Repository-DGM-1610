@@ -15,12 +15,17 @@ public class Enemy : MonoBehaviour
     private List<Vector3> path;
     //Target to follow
     private GameObject target;
+    //Weapon
+
+
     private Rigidbody rb;
+
 
     // Start is called before the first frame update
     void Start()
     {
         //Get Components
+        // weapon = GetComponent<Weapons>();
         target = FindObjectOfType<PlayerController>().gameObject;
         InvokeRepeating("UpdatePath", 0.0f, 0.5f);
 
@@ -43,10 +48,17 @@ public class Enemy : MonoBehaviour
         if(path.Count == 0)
             return;
         // Move to the closet path
-     transform.position = Vector3.MoveTowards(transform.position, path[0]+ new Vector3(0, yPathOffset, 0), moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, path[0]+ new Vector3(0, yPathOffset, 0), moveSpeed * Time.deltaTime);
 
         if(transform.position == path[0] + new Vector3(0, yPathOffset, 0))
             path.RemoveAt(0);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        curHp -= damage;
+
+        //if(curHp <=0)die();
     }
 
     void Update()
@@ -58,5 +70,15 @@ public class Enemy : MonoBehaviour
 
         //Calculate the distance between the player and the enemy
         float dist = Vector3.Distance(transform.position, target.transform.position);
+
+        //if within attackrange shoot at player
+        if(dist<= attackRange)
+        {
+           // if(weapon.CanShoot())
+          //  weapon.Shoot();
+        }
+        else{
+            ChaseTarget();
+        }
     }
 }

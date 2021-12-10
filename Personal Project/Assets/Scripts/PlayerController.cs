@@ -12,17 +12,21 @@ public class PlayerController : MonoBehaviour
     private float forwardInput;
      private Rigidbody rb;
 
-    // Start is called before the first frame update
+    public AudioClip deathSFX;
+    private AudioSource audioSource;
+
     void Start()
     {
-        
+      audioSource = GetComponent<AudioSource>();
     }
+
     //Destroy player on contact with enemy
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag =="Enemy")
         {
-            Destroy(gameObject);
+            audioSource.PlayOneShot(deathSFX);
+           Destroy(gameObject);
         }
     }
 
