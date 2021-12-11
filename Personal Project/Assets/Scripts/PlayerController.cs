@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void GiveHealth(int amuntToGive)
+{
+    
+}
     // Update is called once per frame
     void Update()
     {
