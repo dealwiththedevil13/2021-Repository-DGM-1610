@@ -8,7 +8,7 @@ public class MenuUI : MonoBehaviour
     //On the press of the play button The Game begins
   public void OnPlayButton()
   {
-      SceneManager.LoadScene("Game");
+      SceneManager.LoadScene("My Game");
   }
 
     //Can leave game after seleccting the Quit button
