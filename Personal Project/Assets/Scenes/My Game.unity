@@ -894,7 +894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572065540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49272442, y: -0.71, z: 5.66}
+  m_LocalPosition: {x: -0.49272442, y: -0.71, z: 4.57}
   m_LocalScale: {x: 0.62343, y: 0.62343, z: 0.62343}
   m_Children:
   - {fileID: 321122506}
@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curHp: 10
   maxHp: 10
-  moveSpeed: 50
+  moveSpeed: 30
   attackRange: 0
   yPathOffset: 3
 --- !u!1 &705507993
@@ -1548,10 +1548,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 946166022}
     m_Modifications:
-    - target: {fileID: -3629246610082362640, guid: ab2b0d14c5c48d24fb1d1a7b46d936fb, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7412619258722808255, guid: ab2b0d14c5c48d24fb1d1a7b46d936fb, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1970,7 +1966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curHp: 10
   maxHp: 10
-  moveSpeed: 20
+  moveSpeed: 10
   attackRange: 0
   yPathOffset: 1
 --- !u!1001 &1126731581
@@ -1980,10 +1976,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 946166022}
     m_Modifications:
-    - target: {fileID: 2640663600166112705, guid: d8e3528c3e25813439405fe3a6fe9dd8, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5548585445895662694, guid: d8e3528c3e25813439405fe3a6fe9dd8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2040,12 +2032,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5548585445895662695, guid: d8e3528c3e25813439405fe3a6fe9dd8, type: 3}
+      propertyPath: pickupParticle
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5548585445895662714, guid: d8e3528c3e25813439405fe3a6fe9dd8, type: 3}
       propertyPath: m_Name
       value: Notes
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 2640663600166112705, guid: d8e3528c3e25813439405fe3a6fe9dd8, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: d8e3528c3e25813439405fe3a6fe9dd8, type: 3}
 --- !u!1 &1163930734
 GameObject:
@@ -2861,18 +2857,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 946166022}
     m_Modifications:
-    - target: {fileID: -3629246610082362640, guid: ab2b0d14c5c48d24fb1d1a7b46d936fb, type: 3}
-      propertyPath: m_Volume
-      value: 0.63
-      objectReference: {fileID: 0}
-    - target: {fileID: -3629246610082362640, guid: ab2b0d14c5c48d24fb1d1a7b46d936fb, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -3629246610082362640, guid: ab2b0d14c5c48d24fb1d1a7b46d936fb, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7412619258722808255, guid: ab2b0d14c5c48d24fb1d1a7b46d936fb, type: 3}
       propertyPath: m_RootOrder
       value: 1

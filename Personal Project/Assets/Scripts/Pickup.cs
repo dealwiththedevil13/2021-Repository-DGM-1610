@@ -15,6 +15,8 @@ public class Pickup : MonoBehaviour
     //get Audio for pickup
    public AudioClip pickupSFX;
 
+   public GameObject pickupParticle;
+
    void Start()
    {
        startPos = transform.position;
@@ -25,10 +27,10 @@ public class Pickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            //Refrence Audio SOurce to play sound effect
-            other.GetComponent<AudioSource>().PlayOneShot(pickupSFX);
-            //Destroy PickUp
             Destroy(this.gameObject);
         }
+         //Create the hit particle
+             GameObject obj = Instantiate(pickupParticle, transform.position, Quaternion.identity);
+
     }
 }
