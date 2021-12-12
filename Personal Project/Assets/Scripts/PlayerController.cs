@@ -27,12 +27,13 @@ public class PlayerController : MonoBehaviour
         {
             audioSource.PlayOneShot(deathSFX);
            Destroy(gameObject);
+           GameManager.instance.LoseGame();
         }
     }
 
     public void GiveHealth(int amuntToGive)
 {
-    
+
 }
     // Update is called once per frame
     void Update()
@@ -57,5 +58,12 @@ public class PlayerController : MonoBehaviour
         }
        // transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
        // transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime * horizontalInput);
+
+        //Doesn't do anything when the game is paused
+        if(GameManager.instance.gamePaused == true)
+        return;
     }
+
+   
+
 }
